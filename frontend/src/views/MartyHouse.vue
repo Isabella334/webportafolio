@@ -9,57 +9,60 @@
 Echa un vistazo a los pósters colgados por todo el cuarto. Cada uno revela un gusto, una pasión, una parte especial de la personalidad de la desarrolladora. Haz clic y sumérgete en su mundo personal.
     </p>
     <div class="room">
-      <div class="bed-bookshelf"></div>
-      <div class="bed-pillow"></div>
-      <div class="bed"></div>
-      <div class="nightstand">
-        <div class="nightstand-table"></div>
-        <div class="nightstand-leg left"></div>
-        <div class="nightstand-leg right"></div>
+      <div class="room-left">
+        <div class="bed-bookshelf"></div>
+        <div class="bed-pillow"></div>
+        <div class="bed"></div>
+        <div class="nightstand">
+          <div class="nightstand-table"></div>
+          <div class="nightstand-leg left"></div>
+          <div class="nightstand-leg right"></div>
+        </div>
+        <div class="sleep-zs">
+          <span class="sleep-z z1">Z</span>
+          <span class="sleep-z z2">Z</span>
+          <span class="sleep-z z3">Z</span>
+        </div>
       </div>
-
-      <div class="posters-grid">
-        <div class="posters-row">
-          <div
-            class="poster"
-            v-for="(poster, i) in posters.slice(0, 4)"
-            :key="'row1-' + i"
-            :class="[{ flipped: flippedPoster === i }, 'rot' + i]"
-            @click="flippedPoster = flippedPoster === i ? null : i"
-          >
-            <div class="poster-inner">
-              <div class="poster-front">
-                <img :src="poster.img" :alt="poster.alt" />
+      <div class="room-right">
+        <div class="posters-grid">
+          <div class="posters-row">
+            <div
+              class="poster"
+              v-for="(poster, i) in posters.slice(0, 4)"
+              :key="'row1-' + i"
+              :class="[{ flipped: flippedPoster === i }, 'rot' + i]"
+              @click="flippedPoster = flippedPoster === i ? null : i"
+            >
+              <div class="poster-inner">
+                <div class="poster-front">
+                  <img :src="poster.img" :alt="poster.alt" />
+                </div>
+                <div class="poster-back">
+                  {{ poster.desc }}
+                </div>
               </div>
-              <div class="poster-back">
-                {{ poster.desc }}
+            </div>
+          </div>
+          <div class="posters-row">
+            <div
+              class="poster"
+              v-for="(poster, i) in posters.slice(4, 8)"
+              :key="'row2-' + i"
+              :class="[{ flipped: flippedPoster === i + 4 }, 'rot' + (i + 4)]"
+              @click="flippedPoster = flippedPoster === i + 4 ? null : i + 4"
+            >
+              <div class="poster-inner">
+                <div class="poster-front">
+                  <img :src="poster.img" :alt="poster.alt" />
+                </div>
+                <div class="poster-back">
+                  {{ poster.desc }}
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="posters-row">
-          <div
-            class="poster"
-            v-for="(poster, i) in posters.slice(4, 8)"
-            :key="'row2-' + i"
-            :class="[{ flipped: flippedPoster === i + 4 }, 'rot' + (i + 4)]"
-            @click="flippedPoster = flippedPoster === i + 4 ? null : i + 4"
-          >
-            <div class="poster-inner">
-              <div class="poster-front">
-                <img :src="poster.img" :alt="poster.alt" />
-              </div>
-              <div class="poster-back">
-                {{ poster.desc }}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="sleep-zs">
-        <span class="sleep-z z1">Z</span>
-        <span class="sleep-z z2">Z</span>
-        <span class="sleep-z z3">Z</span>
       </div>
     </div>
   </div>
@@ -119,11 +122,30 @@ export default {
 
 .room {
   position: relative;
-  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
   height: 80vh;
   min-height: 600px;
   margin-top: 2em;
   overflow: visible;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.room-left {
+  position: relative;
+  width: 350px; /* Ajusta según el tamaño de la cama y muebles */
+  min-width: 260px;
+  height: 100%;
+}
+
+.room-right {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: 100%;
 }
 
 /* Estantería detrás de la cama */
@@ -229,11 +251,12 @@ export default {
   flex-direction: column;
   gap: 6em;
   align-items: flex-start;
-  margin-left: 700px;
+  margin-left: 0; /* Elimina el margen grande */
   margin-top: 8px;
   z-index: 10;
   position: relative;
-  width: calc(100vw - 800px); /* Limita el ancho para que los posters no se peguen al borde derecho */
+  width: 100%;
+  max-width: 700px; /* Limita el ancho de los posters */
 }
 .posters-row {
   display: flex;
