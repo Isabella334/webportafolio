@@ -1,0 +1,61 @@
+.fade-in-enter-active {
+  transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.fade-in-enter-from {
+  opacity: 0;
+}
+.fade-in-enter-to {
+  opacity: 1;
+}
+
+.home {
+  background: black;
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  margin-top: 100px;
+  max-height: 60vh;
+}
+
+.start-btn {
+  margin-bottom: 150px;
+  padding: 16px 32px;
+  font-size: 4rem;
+  background: #e50914;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s, filter 0.2s, box-shadow 0.2s, opacity 0.2s;
+  opacity: 0;
+  filter: brightness(0.5) blur(1px);
+  box-shadow: 0 0 24px #e50914aa, 0 2px 8px #0008;
+  animation: flicker-in 2.2s cubic-bezier(.4,0,.2,1) forwards;
+  animation-delay: 1s;
+}
+
+@keyframes flicker-in {
+  0%   { opacity: 0; filter: brightness(0.5) blur(1px);}
+  10%  { opacity: 1; filter: brightness(1.5) blur(0.5px);}
+  18%  { opacity: 0.7; filter: brightness(0.7) blur(1px);}
+  26%  { opacity: 1; filter: brightness(1.8) blur(0);}
+  34%  { opacity: 0.8; filter: brightness(0.8) blur(0.5px);}
+  42%  { opacity: 1; filter: brightness(2) blur(0);}
+  60%  { opacity: 1; filter: brightness(1.2) blur(0);}
+  100% { opacity: 1; filter: brightness(1) blur(0);}
+}
+
+.start-btn:hover {
+  background: #b00610;
+  filter: brightness(1.2);
+}
