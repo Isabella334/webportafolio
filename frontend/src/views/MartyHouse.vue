@@ -314,7 +314,7 @@ export default {
   transform: rotateY(180deg);
   justify-content: center;
   padding: 0.5em;
-  font-size: 0.7rem;
+  font-size: 1rem;
   text-align: center;
 }
 
