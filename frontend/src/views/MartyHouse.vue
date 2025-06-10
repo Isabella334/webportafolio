@@ -125,19 +125,23 @@ export default {
   display: flex;
   flex-direction: row;
   width: 100%;
-  height: 80vh;
-  min-height: 600px;
+  min-height: 400px; /* más flexible para pantallas pequeñas */
+  height: auto;      /* deja que crezca según el contenido */
   margin-top: 2em;
   overflow: visible;
-  align-items: flex-start;
+  align-items: center; /* centra verticalmente */
   justify-content: center;
 }
 
 .room-left {
   position: relative;
-  width: 350px; /* Ajusta según el tamaño de la cama y muebles */
+  width: 350px;
   min-width: 260px;
-  height: 100%;
+  height: 260px; /* ajusta para que los muebles quepan, pero no sea enorme */
+  display: flex;
+  align-items: flex-end; /* cama abajo dentro del contenedor */
+  justify-content: center;
+  /* quita height: 100%; */
 }
 
 .room-right {
@@ -152,7 +156,7 @@ export default {
 .bed-bookshelf {
   position: absolute;
   left: 20px;
-  bottom: 160px; /* antes 430px, ahora más baja y detrás de la almohada */
+  bottom: 100px; /* ajusta para que quede sobre la cama */
   width: 260px;
   height: 90px;
   background: #7a5c3a;
@@ -182,7 +186,7 @@ export default {
 .bed-pillow {
   position: absolute;
   left: 50px;
-  bottom: 125px; /* súbela un poco para que quede sobre la cama */
+  bottom: 80px; /* ajusta para que quede sobre la cama */
   width: 160px;
   height: 55px;      /* antes 70px */
   background: #fff;
@@ -196,7 +200,7 @@ export default {
 .bed {
   position: absolute;
   left: 30px;
-  bottom: 60px;
+  bottom: 0; /* pon la cama pegada al fondo de room-left */
   width: 240px;
   height: 100px;
   background: #bfa76a;
@@ -210,7 +214,7 @@ export default {
 .nightstand {
   position: absolute;
   left: 285px;
-  bottom: 70px;
+  bottom: 0; /* pegada al fondo */
   width: 50px;
   height: 60px;
   z-index: 3;
@@ -332,8 +336,8 @@ export default {
 
 .sleep-zs {
   position: absolute;
-  left: 110px;   /* Ajusta según la posición de la almohada */
-  bottom: 185px; /* Ajusta para que salga de la almohada */
+  left: 110px;
+  bottom: 120px; /* ajusta para que salga de la almohada */
   z-index: 10;
   pointer-events: none;
 }
