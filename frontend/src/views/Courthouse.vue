@@ -142,7 +142,7 @@ export default {
 }
 
 .location-desc {
-  font-size: 0.65rem; /* antes 1.3rem */
+  font-size: 0.8rem;
   max-width: 300px;
   text-align: center;
   margin-bottom: 1rem;

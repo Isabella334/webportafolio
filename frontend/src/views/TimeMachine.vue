@@ -84,7 +84,7 @@ export default {
 }
 
 .location-desc {
-  font-size: 0.65rem; /* antes 1.3rem */
+  font-size: 0.8rem; /* antes 1.3rem */
   max-width: 300px;
   text-align: center;
   margin-bottom: 1rem;
@@ -158,6 +158,15 @@ export default {
 @keyframes flux-zap {
   0% { transform: scale(1) rotate(0deg);}
   100% { transform: scale(1.08) rotate(20deg);}
+}
+
+@keyframes flux-glow {
+  0% {
+    box-shadow: 0 0 8px #00ffe7aa, 0 0 16px #00ffe744;
+  }
+  100% {
+    box-shadow: 0 0 32px #00ffe7ff, 0 0 64px #00ffe744;
+  }
 }
 
 .dreams-stack {

@@ -112,7 +112,7 @@ export default {
 
 .map-title {
   color: #00ffe7;
-  font-size: 5rem;
+  font-size: 3rem;
   margin-top: 40px;
   margin-bottom: 2px;
   text-align: center;
@@ -171,7 +171,7 @@ export default {
 .map-content {
   color: #fff;
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .map-images {
@@ -214,7 +214,7 @@ export default {
   border: 2px solid #00ffe7;
   border-radius: 10px;
   white-space: nowrap;
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: bold;
   pointer-events: none;
   box-shadow: 0 2px 16px #00ffe7;

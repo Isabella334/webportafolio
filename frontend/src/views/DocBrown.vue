@@ -21,7 +21,7 @@ Sobre la computadora hay enlaces que conducen a inventos modernos: proyectos web
                 <a
                   :href="project.url"
                   target="_blank"
-                  style="display:block;padding:18px 24px;background:#111;border-radius:10px;color:#00ffe7;font-size:1.3rem;text-decoration:none;box-shadow:0 2px 12px #00ffe733;font-family:'Fira Mono',monospace;font-weight:bold;transition:background 0.2s, color 0.2s;"
+                  style="display:block;padding:12px 18px;background:#111;border-radius:10px;color:#00ffe7;font-size:0.7rem;text-decoration:none;box-shadow:0 2px 12px #00ffe733;font-family:'Fira Mono',monospace;font-weight:bold;transition:background 0.2s, color 0.2s;"
                   @mouseover="hovered = project.name"
                   @mouseleave="hovered = null"
                   :style="hovered === project.name ? 'background:#00ffe7;color:#111;' : ''"
@@ -90,7 +90,7 @@ export default {
 }
 
 .location-desc {
-  font-size: 0.65rem; /* antes 1.3rem */
+  font-size: 0.8rem; /* antes 1.3rem */
   max-width: 300px;
   margin-bottom: 1rem;
 }
@@ -105,10 +105,10 @@ export default {
 
 .monitor-frame {
   position: relative;
-  width: 49vw;         /* antes 98vw */
-  max-width: 850px;    /* antes 1700px */
-  height: 37.5vh;      /* antes 75vh */
-  max-height: 475px;   /* antes 950px */
+  width: 49vw;
+  max-width: 850px;
+  height: 50vh;        /* antes 37.5vh */
+  max-height: 680px;   /* antes 475px */
   background: #bcbcbc;
   border-radius: 9px 9px 6px 6px;
   box-shadow: 0 6px 24px #000a, 0 1px 0 #888;
@@ -120,13 +120,13 @@ export default {
 
 .monitor-screen {
   position: absolute;
-  top: 19px;           /* antes 38px */
+  top: 19px;
   left: 50%;
   transform: translateX(-50%);
-  width: 40vw;         /* antes 80vw */
-  max-width: 700px;    /* antes 1400px */
-  height: 25vh;        /* antes 50vh */
-  max-height: 350px;   /* antes 700px */
+  width: 40vw;
+  max-width: 700px;
+  height: 32vh;        /* antes 25vh */
+  max-height: 490px;   /* antes 350px */
   background: #222e1e;
   border-radius: 8px;
   box-shadow: 0 0 32px #00ffe744 inset, 0 0 0 6px #222;
@@ -183,10 +183,12 @@ export default {
 }
 
 .monitor-text a {
-  padding: 9px 12px !important; /* antes 18px 24px */
-  font-size: 0.65rem !important; /* antes 1.3rem */
+  padding: 12px 19px !important; 
+  font-size: 0.6rem !important;
   border-radius: 5px !important;
   box-shadow: 0 1px 6px #00ffe733 !important;
+  display: block;
+  text-align: center;
 }
 
 .monitor-bezel {
