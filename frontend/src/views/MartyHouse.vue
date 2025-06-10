@@ -253,10 +253,9 @@ export default {
 .posters-grid {
   display: flex;
   flex-direction: column;
-  gap: 6em;
+  gap: 3em;
   align-items: flex-start;
-  margin-left: 0; /* Elimina el margen grande */
-  margin-top: 8px;
+  margin-left: 10px; /* Elimina el margen grande */
   z-index: 10;
   position: relative;
   width: 100%;
