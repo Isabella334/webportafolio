@@ -78,7 +78,7 @@ export default {
         { img: '/posters/interes2.jpg', alt: '¿Cómo entrenar a tu dragón?', desc: 'Es mi película animada favorita porque mezcla aventura y creatividad.' },
         { img: '/posters/interes3.jpg', alt: 'Orcas', desc: 'Las orcas son mi animal favorito porque son seres muy inteligentes y bellos.' },
         { img: '/posters/interes4.jpg', alt: 'Nadar', desc: 'Nadar es una de mis pasiones; lo practico desde hace años.' },
-        { img: '/posters/interes5.jpg', alt: 'Cine', desc: 'Me fascina el mundo del cine y estoy muy interesada en todo lo que hay detrás de la industria cinematográfica.' },
+        { img: '/posters/interes5.jpg', alt: 'Cine', desc: 'Me fascina el cine y todo lo que hay detrás de la industria cinematográfica.' },
         { img: '/posters/interes6.jpg', alt: 'Robótica', desc: 'Me encanta trabajar en proyectos de robótica porque me permiten construir y dar vida a ideas tangibles.' },
         { img: '/posters/interes7.jpg', alt: 'Ciberseguridad', desc: 'Me atrae mucho la ciberseguridad y me gustaría especializarme en ella para ayudar a proteger sistemas y personas.' },
         { img: '/posters/interes8.jpg', alt: 'Viajar', desc: 'Viajar me gusta mucho; conocer nuevos lugares y culturas me llena de energía y nuevas ideas.' }
