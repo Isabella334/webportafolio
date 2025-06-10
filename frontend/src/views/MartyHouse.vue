@@ -129,13 +129,13 @@ export default {
 /* Estantería detrás de la cama */
 .bed-bookshelf {
   position: absolute;
-  left: 40px;
-  bottom: 320px; /* antes 430px, ahora más baja y detrás de la almohada */
-  width: 520px;
-  height: 180px;
+  left: 20px;
+  bottom: 160px; /* antes 430px, ahora más baja y detrás de la almohada */
+  width: 260px;
+  height: 90px;
   background: #7a5c3a;
-  border: 8px solid #c9a87a;
-  border-radius: 16px;
+  border: 4px solid #c9a87a;
+  border-radius: 10px;
   z-index: 1;
   display: flex;
   flex-direction: column;
@@ -150,19 +150,19 @@ export default {
   width: 100%;
 }
 .bed-bookshelf::before {
-  margin-top: 60px;   /* ajusta la separación de las líneas */
+  margin-top: 30px;
 }
 .bed-bookshelf::after {
-  margin-bottom: 60px;
+  margin-bottom: 30px;
 }
 
 /* Almohada */
 .bed-pillow {
   position: absolute;
-  left: 100px;
-  bottom: 250px; /* súbela un poco para que quede sobre la cama */
-  width: 320px;
-  height: 110px;      /* antes 70px */
+  left: 50px;
+  bottom: 125px; /* súbela un poco para que quede sobre la cama */
+  width: 160px;
+  height: 55px;      /* antes 70px */
   background: #fff;
   border-radius: 32px 32px 40px 40px;
   box-shadow: 0 2px 12px #0003;
@@ -173,10 +173,10 @@ export default {
 /* Cama vista de frente */
 .bed {
   position: absolute;
-  left: 60px;
-  bottom: 120px;
-  width: 480px;
-  height: 200px;
+  left: 30px;
+  bottom: 60px;
+  width: 240px;
+  height: 100px;
   background: #bfa76a;
   border-radius: 48px 48px 0 0; /* antes: 0 0 48px 48px */
   box-shadow: 0 8px 32px #0007;
@@ -187,10 +187,10 @@ export default {
 /* Mesita de noche vista de frente */
 .nightstand {
   position: absolute;
-  left: 570px;
-  bottom: 140px;
-  width: 100px;
-  height: 120px;
+  left: 285px;
+  bottom: 70px;
+  width: 50px;
+  height: 60px;
   z-index: 3;
   display: flex;
   flex-direction: column;
@@ -198,8 +198,8 @@ export default {
   justify-content: flex-end;
 }
 .nightstand-table {
-  width: 100px;
-  height: 18px;
+  width: 50px;
+  height: 9px;
   background: #7a5c3a;
   border-radius: 8px;
   border: 3px solid #c9a87a;
@@ -208,8 +208,8 @@ export default {
   left: 0;
 }
 .nightstand-leg {
-  width: 12px;
-  height: 90px;
+  width: 6px;
+  height: 45px;
   background: #7a5c3a;
   border-radius: 6px;
   border: 3px solid #c9a87a;
@@ -217,10 +217,10 @@ export default {
   top: 18px;
 }
 .nightstand-leg.left {
-  left: 10px;
+  left: 5px;
 }
 .nightstand-leg.right {
-  right: 10px;
+  right: 5px;
 }
 
 /* Posters grid */
@@ -229,22 +229,22 @@ export default {
   flex-direction: column;
   gap: 6em;
   align-items: flex-start;
-  margin-left: 750px;
-  margin-top: 10px;
+  margin-left: 700px;
+  margin-top: 8px;
   z-index: 10;
   position: relative;
   width: calc(100vw - 800px); /* Limita el ancho para que los posters no se peguen al borde derecho */
 }
 .posters-row {
   display: flex;
-  gap: 9em; /* Ajusta este valor para la separación horizontal deseada */
+  gap: 7em; /* Ajusta este valor para la separación horizontal deseada */
   justify-content: flex-start; /* Los posters se agrupan a la izquierda del grid */
   width: 100%;
 }
 
 .poster {
-  width: 180px;
-  height: 260px;
+  width: 200px;
+  height: 140px;
   perspective: 900px;
   background: transparent;
   border: none;
@@ -269,7 +269,6 @@ export default {
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  border-radius: 16px;
   box-shadow: 0 2px 16px #00ffe744;
   overflow: hidden;
   display: flex;
@@ -287,8 +286,8 @@ export default {
   color: #00ffe7;
   transform: rotateY(180deg);
   justify-content: center;
-  padding: 1.2em;
-  font-size: 1.1rem;
+  padding: 0.5em;
+  font-size: 0.5rem;
   text-align: center;
 }
 
@@ -310,8 +309,8 @@ export default {
 
 .sleep-zs {
   position: absolute;
-  left: 220px;   /* Ajusta según la posición de la almohada */
-  bottom: 370px; /* Ajusta para que salga de la almohada */
+  left: 110px;   /* Ajusta según la posición de la almohada */
+  bottom: 185px; /* Ajusta para que salga de la almohada */
   z-index: 10;
   pointer-events: none;
 }
@@ -319,21 +318,21 @@ export default {
 .sleep-z {
   position: absolute;
   color: #00bfff;
-  font-size: 2.2rem;
+  font-size: 1.1rem;
   font-family: 'Comic Sans MS', 'Comic Sans', cursive, sans-serif;
   opacity: 0.7;
   animation: sleep-z-float 2.5s linear infinite;
 }
 
 .sleep-z.z2 {
-  left: 28px;
-  font-size: 2.7rem;
+  left: 14px;
+  font-size: 1.35rem;
   animation-delay: 0.7s;
   opacity: 0.6;
 }
 .sleep-z.z3 {
-  left: 60px;
-  font-size: 3.2rem;
+  left: 30px;
+  font-size: 1.6rem;
   animation-delay: 1.4s;
   opacity: 0.5;
 }
