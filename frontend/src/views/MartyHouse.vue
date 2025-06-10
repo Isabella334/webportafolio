@@ -114,7 +114,7 @@ export default {
 }
 
 .location-desc {
-  font-size: 0.65rem; /* antes 1.3rem */
+  font-size: 0.8rem;
   max-width: 300px;
   text-align: center;
   margin-bottom: 1rem;
@@ -314,7 +314,7 @@ export default {
   transform: rotateY(180deg);
   justify-content: center;
   padding: 0.5em;
-  font-size: 0.5rem;
+  font-size: 0.7rem;
   text-align: center;
 }
 
