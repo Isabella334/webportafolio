@@ -195,7 +195,7 @@ export default {
   display: block;
   height: auto;
   transition: transform 0.2s;
-  max-width: 400px;
+  max-width: 200px; /* antes 400px */
 }
 
 .map-img:hover {

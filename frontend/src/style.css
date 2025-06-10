@@ -1,4 +1,9 @@
 body {
   margin: 0;
   font-family: 'Courier New', monospace;
+  transform: scale(0.8);
+  transform-origin: top left;
+  width: 125vw; /* Compensa el scale para evitar scroll horizontal */
+  height: 125vh;
+  overflow-x: hidden;
 }

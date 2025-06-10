@@ -105,16 +105,16 @@ export default {
 
 .location-title {
   color: #00ffe7;
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  text-shadow: 0 0 8px #00ffe7, 2px 2px 0 #222;
+  font-size: 1.5rem; /* antes 3rem */
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 4px #00ffe7, 1px 1px 0 #222;
 }
 
 .location-desc {
-  font-size: 1.3rem;
-  max-width: 600px;
+  font-size: 0.65rem; /* antes 1.3rem */
+  max-width: 300px;
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .room {

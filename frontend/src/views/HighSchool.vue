@@ -181,34 +181,33 @@ export default {
 
 .location-title {
   color: #00ffe7;
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  text-shadow: 0 0 8px #00ffe7, 2px 2px 0 #222;
+  font-size: 1.5rem; /* antes 3rem */
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 4px #00ffe7, 1px 1px 0 #222;
 }
 
 .location-desc {
-  font-size: 1.3rem;
-  max-width: 600px;
-  text-align: center;
-  margin-bottom: 2rem;
+  font-size: 0.65rem; /* antes 1.3rem */
+  max-width: 300px;
+  margin-bottom: 1rem;
 }
 
 .lockers-row {
   display: flex;
-  gap: 1rem; 
-  margin-top: 2rem;
+  gap: 0.5rem;
+  margin-top: 1rem;
   flex-wrap: wrap;
   justify-content: center;
-  max-width: 1800px; 
-  width: 98vw;
+  max-width: 900px; /* antes 1800px */
+  width: 49vw;      /* antes 98vw */
 }
 
 .locker {
-  width: 420px;      
-  height: 680px;    
+  width: 210px;      /* antes 420px */
+  height: 340px;     /* antes 680px */
   background: #222;
-  border: 3px solid #00ffe7;
-  border-radius: 16px;
+  border: 1.5px solid #00ffe7;
+  border-radius: 8px;
   position: relative;
   cursor: pointer;
   perspective: 1000px;
@@ -224,7 +223,7 @@ export default {
   width: 100%;
   height: 100%;
   background: linear-gradient(120deg, #222 70%, #00ffe7 100%);
-  border-radius: 14px;
+  border-radius: 7px;
   position: absolute;
   left: 0;
   top: 0;
@@ -240,27 +239,27 @@ export default {
 
 /* Detalles de ventilación */
 .locker-vents {
-  width: 85%;
-  margin: 60px auto 0 auto;
+  width: 42.5%;
+  margin: 30px auto 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 9px;
 }
 .locker-vent {
-  height: 16px;
+  height: 8px;
   background: #00ffe7;
-  border-radius: 7px;
+  border-radius: 3.5px;
   opacity: 0.7;
 }
 
 /* Cuadro del candado */
 .locker-lock {
-  width: 80px;
-  height: 80px;
+  width: 40px;
+  height: 40px;
   background: #111;
-  border: 4px solid #00ffe7;
-  border-radius: 14px;
-  margin: 60px auto 0 auto;
+  border: 2px solid #00ffe7;
+  border-radius: 7px;
+  margin: 30px auto 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -269,8 +268,8 @@ export default {
 .locker-lock::after {
   content: '';
   display: block;
-  width: 36px;
-  height: 36px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
   background: #00ffe7;
   position: absolute;
@@ -286,16 +285,16 @@ export default {
 
 .locker-number {
   color: #00ffe7;
-  font-size: 5rem;
-  margin-bottom: 38px;
-  text-shadow: 0 0 16px #00ffe7;
+  font-size: 2.5rem; /* antes 5rem */
+  margin-bottom: 19px;
+  text-shadow: 0 0 8px #00ffe7;
   font-family: monospace;
 }
 
 .locker-content {
-  font-size: 2rem;
-  padding: 3em;
-  border-radius: 14px;
+  font-size: 1rem; /* antes 2rem */
+  padding: 1.5em;
+  border-radius: 7px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -306,17 +305,17 @@ export default {
 /* Estilos para el gráfico de habilidades */
 .skills-chart {
   width: 100%;
-  max-width: 420px;
+  max-width: 210px;
   display: flex;
   flex-direction: column;
-  gap: 0.1em;
-  margin-top: 2em; /* Antes 4em */
-  margin-bottom: 2em;
+  gap: 0.25em;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 .skills-chart-horizontal {
   width: 100%;
-  max-width: 420px;
+  max-width: 210px;
   display: flex;
   flex-direction: column;
   gap: 0.5em;
@@ -326,36 +325,29 @@ export default {
 .skill-row {
   display: flex;
   align-items: center;
-  gap: 0.7em;
+  gap: 0.35em;
 }
 
 .skill-label {
-  font-size: 1.2rem;
+  font-size: 0.6rem;
   color: #00ffe7;
-  min-width: 120px;
-  text-align: right;
-  font-weight: bold;
-  text-shadow: 0 0 6px #00ffe7;
-   margin-right: 0.5em;
+  min-width: 60px;
+  margin-right: 0.25em;
 }
 
 .skill-bar-bg {
   flex: 1;
   background: transparent;
-  border: 2px solid #00ffe7;
-  border-radius: 8px;
-  height: 1.1em;           /* Más delgada */
-  max-width: 180px;        /* Más corta */
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
+  border: 1px solid #00ffe7;
+  border-radius: 4px;
+  height: 0.55em;
+  max-width: 90px;
 }
 
 .skill-bar {
   background: #00ffe7;
   height: 100%;
-  border-radius: 8px;
+  border-radius: 4px;
   display: flex;
   align-items: center;
   transition: width 0.7s cubic-bezier(.77,0,.18,1);
@@ -364,35 +356,31 @@ export default {
 
 .skill-bar-value {
   color: #fff;
-  font-size: 1rem;
+  font-size: 0.5rem;
   font-weight: bold;
   width: 100%;
   text-align: center;
-  text-shadow: 0 0 8px #222;
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  letter-spacing: 1px;
+  text-shadow: 0 0 4px #222;
+  letter-spacing: 0.5px;
   pointer-events: none;
 }
 
 .education-title {
-  font-size: 2.2rem;
+  font-size: 1.1rem;
   color: #00ffe7;
   text-align: center;
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
   font-weight: bold;
-  text-shadow: 0 0 8px #00ffe7;
+  text-shadow: 0 0 4px #00ffe7;
 }
 
 .skills-title {
-  font-size: 2.2rem;
+  font-size: 1.1rem;
   color: #00ffe7;
   text-align: center;
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
   font-weight: bold;
-  text-shadow: 0 0 8px #00ffe7;
+  text-shadow: 0 0 4px #00ffe7;
 }
 
 .education-logos {
@@ -405,7 +393,7 @@ export default {
 .education-logos-row {
   display: flex;
   flex-direction: column;
-  gap: 1.2em;
+  gap: 0.6em;
   width: 100%;
   align-items: flex-start;
 }
@@ -421,16 +409,16 @@ export default {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 1.5em;
+  gap: 0.75em;
   width: 100%;
   justify-content: flex-start;
 }
 
 .education-logo {
-  width: 90px;
-  max-width: 30vw;
-  border-radius: 12px;
-  box-shadow: 0 2px 16px #00ffe744;
+  width: 45px;
+  max-width: 15vw;
+  border-radius: 6px;
+  box-shadow: 0 1px 8px #00ffe744;
   background: #fff;
   object-fit: contain;
   margin-bottom: 0;
@@ -438,48 +426,47 @@ export default {
 
 .education-desc {
   color: #fff;
-  font-size: 1.2rem;
+  font-size: 0.6rem;
   text-align: left;
   margin-bottom: 0;
-  max-width: 320px;
-  text-shadow: 0 0 6px #00ffe7;
+  max-width: 160px;
+  text-shadow: 0 0 3px #00ffe7;
 }
 
 .languages-title {
-  font-size: 2.2rem;
+  font-size: 1.1rem;
   color: #00ffe7;
   text-align: center;
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
   font-weight: bold;
-  text-shadow: 0 0 8px #00ffe7;
+  text-shadow: 0 0 4px #00ffe7;
 }
 
 .languages-grid {
   display: flex;
   flex-direction: column;
-  gap: 0.6em;              /* Menos espacio entre filas */
-  margin-bottom: 1em;
+  gap: 0.3em;
+  margin-bottom: 0.5em;
 }
 
 .language-row {
   display: grid;
-  grid-template-columns: 90px 90px 60px; /* Columnas más angostas */
-  align-items: center;
-  gap: 0.7em;                            /* Menos espacio entre columnas */
-  font-size: 1.1rem;                     /* Texto más pequeño */
-  padding: 0.4em 0.7em;                  /* Menos padding */
-  max-width: 270px;                      /* Menos ancho */
+  grid-template-columns: 45px 45px 30px;
+  gap: 0.35em;
+  font-size: 0.55rem;
+  padding: 0.2em 0.35em;
+  max-width: 135px;
 }
 
 .language-name {
   color: #00ffe7;
   font-weight: bold;
-  text-shadow: 0 0 6px #00ffe7;
+  text-shadow: 0 0 3px #00ffe7;
 }
 
 .language-stars {
-  font-size: 1.2rem;
-  letter-spacing: 0.1em;
+  font-size: 0.6rem;
+  letter-spacing: 0.05em;
 }
 
 .star {
@@ -495,32 +482,28 @@ export default {
 }
 
 .language-level {
-  font-size: 1rem;
-  color: #fff;
-  text-shadow: 0 0 6px #00ffe7;
+  font-size: 0.5rem;
 }
 
 .languages-desc {
-  margin-top: 1.5em;
-  color: #fff;
-  font-size: 1.1rem;
-  text-align: center;
-  text-shadow: 0 0 6px #00ffe7;
+  margin-top: 0.75em;
+  font-size: 0.55rem;
+  text-shadow: 0 0 3px #00ffe7;
 }
 
 .extras-title {
-  font-size: 2.2rem;
+  font-size: 1.1rem;
   color: #00ffe7;
   text-align: center;
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
   font-weight: bold;
-  text-shadow: 0 0 8px #00ffe7;
+  text-shadow: 0 0 4px #00ffe7;
 }
 
 .shelf-group {
   display: flex;
   flex-direction: column;
-  gap: 0.3em; /* antes 1em, ahora más juntas */
+  gap: 0.15em;
   align-items: center;
 }
 
@@ -529,13 +512,13 @@ export default {
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  min-height: 80px;
-  margin: 0.2em 0 0.2em 0; /* menos espacio arriba y abajo */
-  gap: 1em; /* puedes reducir más si lo deseas */
+  min-height: 40px;
+  margin: 0.1em 0 0.1em 0;
+  gap: 0.5em;
 }
 
 .trophy {
-  font-size: 2.3rem;
+  font-size: 1.15rem;
   cursor: pointer;
   transition: transform 0.2s, filter 0.2s;
   filter: grayscale(0.5) brightness(0.8);
@@ -552,47 +535,41 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  height: 18px;
+  height: 9px;
   background: #bfa76a;
-  border-radius: 0 0 12px 12px;
-  box-shadow: 0 2px 10px #0004;
+  border-radius: 0 0 6px 6px;
+  box-shadow: 0 1px 5px #0004;
   z-index: 1;
 }
 
 .trophy-desc {
-  margin: 1em auto 0 auto;
+  margin: 0.5em auto 0 auto;
   background: #fffbe7;
   color: #222;
-  border-radius: 12px;
-  box-shadow: 0 2px 16px #00ffe744;
-  padding: 1em 1em;
-  max-width: 500px;
-  text-align: center;
-  position: relative;
-  animation: fadein 0.4s;
+  border-radius: 6px;
+  box-shadow: 0 1px 8px #00ffe744;
+  padding: 0.5em 0.5em;
+  max-width: 250px;
 }
 
 .trophy-title {
-  font-size: 1.3rem;
-  font-weight: bold;
-  color: #00bfae;
-  margin-bottom: 0.5em;
-  text-shadow: 0 0 6px #00ffe7aa;
+  font-size: 0.65rem;
+  margin-bottom: 0.25em;
+  text-shadow: 0 0 3px #00ffe7aa;
 }
 
 .trophy-text {
-  font-size: 1.1rem;
-  color: #333;
-  margin-bottom: 1em;
+  font-size: 0.55rem;
+  margin-bottom: 0.5em;
 }
 
 .trophy-close {
   background: #00ffe7;
   color: #222;
   border: none;
-  border-radius: 8px;
-  padding: 0.4em 1.2em;
-  font-size: 1rem;
+  border-radius: 4px;
+  padding: 0.2em 0.6em;
+  font-size: 0.5rem;
   font-weight: bold;
   cursor: pointer;
   transition: background 0.2s;
@@ -611,9 +588,9 @@ export default {
 
 .back-arrow {
   position: absolute;
-  top: 24px;
-  left: 32px;
-  font-size: 2.5rem;
+  top: 12px;
+  left: 16px;
+  font-size: 1.25rem; /* antes 2.5rem */
   color: #00ffe7;
   text-decoration: none;
   z-index: 10;

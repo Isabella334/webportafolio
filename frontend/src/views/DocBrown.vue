@@ -84,36 +84,35 @@ export default {
 
 .location-title {
   color: #00ffe7;
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  text-shadow: 0 0 8px #00ffe7, 2px 2px 0 #222;
+  font-size: 1.5rem; /* antes 3rem */
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 4px #00ffe7, 1px 1px 0 #222;
 }
 
 .location-desc {
-  font-size: 1.3rem;
-  max-width: 600px;
-  text-align: center;
-  margin-bottom: 2rem;
+  font-size: 0.65rem; /* antes 1.3rem */
+  max-width: 300px;
+  margin-bottom: 1rem;
 }
 
 .monitor-80s {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  margin-top: 40px;
-  min-height: 420px;
+  margin-top: 20px;
+  min-height: 210px;
 }
 
 .monitor-frame {
   position: relative;
-  width: 98vw;
-  max-width: 1700px;
-  height: 75vh;
-  max-height: 950px;
+  width: 49vw;         /* antes 98vw */
+  max-width: 850px;    /* antes 1700px */
+  height: 37.5vh;      /* antes 75vh */
+  max-height: 475px;   /* antes 950px */
   background: #bcbcbc;
-  border-radius: 18px 18px 12px 12px;
-  box-shadow: 0 12px 48px #000a, 0 2px 0 #888;
-  border: 8px solid #888;
+  border-radius: 9px 9px 6px 6px;
+  box-shadow: 0 6px 24px #000a, 0 1px 0 #888;
+  border: 4px solid #888;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -121,16 +120,16 @@ export default {
 
 .monitor-screen {
   position: absolute;
-  top: 38px;
+  top: 19px;           /* antes 38px */
   left: 50%;
   transform: translateX(-50%);
-  width: 80vw;
-  max-width: 1400px;
-  height: 50vh;
-  max-height: 700px;
+  width: 40vw;         /* antes 80vw */
+  max-width: 700px;    /* antes 1400px */
+  height: 25vh;        /* antes 50vh */
+  max-height: 350px;   /* antes 700px */
   background: #222e1e;
-  border-radius: 16px;
-  box-shadow: 0 0 64px #00ffe744 inset, 0 0 0 12px #222;
+  border-radius: 8px;
+  box-shadow: 0 0 32px #00ffe744 inset, 0 0 0 6px #222;
   overflow: hidden;
   z-index: 2;
   display: flex;
@@ -141,60 +140,78 @@ export default {
 .monitor-glow {
   position: absolute;
   left: 0; top: 0; right: 0; bottom: 0;
-  border-radius: 10px;
-  box-shadow: 0 0 48px 12px #00ffe733 inset;
+  border-radius: 5px;
+  box-shadow: 0 0 24px 6px #00ffe733 inset;
   pointer-events: none;
 }
 
 .monitor-reflection {
   position: absolute;
-  left: 18px; top: 18px;
-  width: 60px; height: 40px;
+  left: 9px; top: 9px;
+  width: 30px; height: 20px;
+  border-radius: 4px;
   background: linear-gradient(120deg, #fff5 60%, transparent 100%);
-  border-radius: 8px;
   opacity: 0.4;
   pointer-events: none;
 }
 
 .monitor-text {
   position: absolute;
-  left: 32px;
-  bottom: 24px;
+  left: 16px;
+  bottom: 12px;
   color: #00ffe7;
   font-family: 'VT323', 'Fira Mono', 'Consolas', monospace;
-  font-size: 2rem;
-  letter-spacing: 2px;
-  text-shadow: 0 0 8px #00ffe7, 0 0 2px #fff;
+  font-size: 1rem; /* antes 2rem */
+  letter-spacing: 1px;
+  text-shadow: 0 0 4px #00ffe7, 0 0 1px #fff;
   z-index: 3;
   white-space: pre-line;
   user-select: none;
+}
+.monitor-text h2 {
+  font-size: 1.05rem !important; /* antes 2.1rem */
+  margin-bottom: 5px !important;
+}
+
+.monitor-text ul {
+  max-width: 350px !important; /* antes 700px */
+  width: 100%;
+}
+
+.monitor-text li {
+  margin-bottom: 9px !important; /* antes 18px */
+}
+
+.monitor-text a {
+  padding: 9px 12px !important; /* antes 18px 24px */
+  font-size: 0.65rem !important; /* antes 1.3rem */
+  border-radius: 5px !important;
+  box-shadow: 0 1px 6px #00ffe733 !important;
 }
 
 .monitor-bezel {
   position: absolute;
   left: 0; right: 0; bottom: 0;
-  height: 38px;
-  background: #a0a0a0;
-  border-radius: 0 0 12px 12px;
-  box-shadow: 0 2px 8px #0005 inset;
+  height: 19px;
+  border-radius: 0 0 6px 6px;
+  box-shadow: 0 1px 4px #0005 inset;
   z-index: 4;
 }
 
 .monitor-buttons {
   position: absolute;
-  right: 24px;
-  bottom: 12px;
+  right: 12px;
+  bottom: 6px;
   display: flex;
-  gap: 8px;
+  gap: 4px;
   z-index: 5;
 }
 .monitor-btn {
-  width: 18px;
-  height: 18px;
+  width: 9px;
+  height: 9px;
   border-radius: 50%;
-  background: #444;
-  border: 2px solid #888;
-  box-shadow: 0 2px 4px #0007 inset;
+  border: 1px solid #888;
+  box-shadow: 0 1px 2px #0007 inset;
 }
 .monitor-btn.red { background: #e74c3c; }
 .monitor-btn.yellow { background: #f1c40f; }
@@ -203,33 +220,31 @@ export default {
 .monitor-base {
   position: absolute;
   left: 50%;
-  bottom: -38px;
+  bottom: -19px;
   transform: translateX(-50%);
-  width: 320px;
-  height: 60px;
-  background: #888;
-  border-radius: 0 0 18px 18px;
-  box-shadow: 0 8px 16px #0005;
+  width: 160px;
+  height: 30px;
+  border-radius: 0 0 9px 9px;
+  box-shadow: 0 4px 8px #0005;
   z-index: 1;
 }
 .monitor-foot {
   position: absolute;
   left: 50%;
-  bottom: -58px;
+  bottom: -29px;
   transform: translateX(-50%);
-  width: 120px;
-  height: 28px;
-  background: #444;
-  border-radius: 0 0 12px 12px;
-  box-shadow: 0 2px 8px #0008;
+  width: 60px;
+  height: 14px;
+  border-radius: 0 0 6px 6px;
+  box-shadow: 0 1px 4px #0008;
   z-index: 0;
 }
 
 .back-arrow {
   position: absolute;
-  top: 24px;
-  left: 32px;
-  font-size: 2.5rem;
+  top: 12px;
+  left: 16px;
+  font-size: 1.25rem; /* antes 2.5rem */
   color: #00ffe7;
   text-decoration: none;
   z-index: 200;

@@ -136,20 +136,20 @@ export default {
 
 .location-title {
   color: #00ffe7;
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  text-shadow: 0 0 8px #00ffe7, 2px 2px 0 #222;
+  font-size: 1.5rem; /* antes 3rem */
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 4px #00ffe7, 1px 1px 0 #222;
 }
 
 .location-desc {
-  font-size: 1.3rem;
-  max-width: 600px;
+  font-size: 0.65rem; /* antes 1.3rem */
+  max-width: 300px;
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .clock-analog {
-  margin: 2rem 0 2.5rem 0;
+  margin: 1rem 0 1.25rem 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -157,12 +157,12 @@ export default {
 
 .clock-face {
   position: relative;
-  width: 220px;   /* antes 300px */
-  height: 220px;  /* antes 300px */
+  width: 110px;   /* antes 220px */
+  height: 110px;  /* antes 220px */
   background: #222;
-  border: 8px solid #00ffe7;
+  border: 4px solid #00ffe7;
   border-radius: 50%;
-  box-shadow: 0 0 24px #00ffe799;
+  box-shadow: 0 0 12px #00ffe799;
 }
 
 .hand {
@@ -174,22 +174,22 @@ export default {
 }
 
 .hand.hour {
-  width: 10px;
-  height: 60px;
+  width: 5px;
+  height: 30px;
   background: #00ffe7;
   z-index: 3;
 }
 
 .hand.minute {
-  width: 6px;
-  height: 80px;
+  width: 3px;
+  height: 40px;
   background: #fff;
   z-index: 2;
 }
 
 .hand.second {
-  width: 3px;
-  height: 95px;
+  width: 1.5px;
+  height: 47.5px;
   background: #ff0044;
   z-index: 4;
 }
@@ -198,10 +198,10 @@ export default {
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 18px;
-  height: 18px;
+  width: 9px;
+  height: 9px;
   background: #fff;
-  border: 3px solid #00ffe7;
+  border: 1.5px solid #00ffe7;
   border-radius: 50%;
   transform: translate(-50%, -50%);
   z-index: 10;
@@ -210,11 +210,11 @@ export default {
 .clock-mark {
   position: absolute;
   left: 50%;
-  top: 12px;
-  width: 4px;
-  height: 18px;
+  top: 6px;
+  width: 2px;
+  height: 9px;
   background: transparent;
-  border-radius: 2px;
+  border-radius: 1px;
   transform-origin: bottom center;
 }
 
@@ -222,11 +222,11 @@ export default {
   position: absolute;
   left: 50%;
   top: 50%;
-  font-size: 1.2rem;
+  font-size: 0.6rem;
   color: #00ffe7;
   font-weight: bold;
-  text-shadow: 0 0 6px #000, 0 0 2px #00ffe7;
-  transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-82px) rotate(calc(-1 * var(--angle)));
+  text-shadow: 0 0 3px #000, 0 0 1px #00ffe7;
+  transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-41px) rotate(calc(-1 * var(--angle)));
   transform-origin: center center;
   pointer-events: none;
   user-select: none;
@@ -239,8 +239,8 @@ export default {
   left: 50%;
   bottom: 0;
   transform: translateX(-50%);
-  width: 1400px;      /* mucho más grande */
-  height: 420px;      /* más alto para el nuevo tamaño */
+  width: 700px;      /* antes 1400px */
+  height: 210px;     /* antes 420px */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -249,112 +249,112 @@ export default {
 }
 
 .table-top {
-  width: 1300px;
-  height: 140px;
+  width: 650px;
+  height: 70px;
   background: #c9a87a;
   position: absolute;
-  bottom: 118px; /* justo arriba del borde y las patas */
+  bottom: 59px;
   left: 50%;
   transform: translateX(-50%);
   clip-path: polygon(8% 0, 92% 0, 100% 100%, 0% 100%);
-  box-shadow: 0 18px 48px #0005;
+  box-shadow: 0 9px 24px #0005;
   z-index: 2;
 }
 
 .table-edge {
-  width: 1300px;
-  height: 48px;
+  width: 650px;
+  height: 24px;
   background: #a67c52;
   position: absolute;
-  bottom: 70px; /* justo arriba de las patas */
+  bottom: 35px;
   left: 50%;
   transform: translateX(-50%);
-  border-radius: 0 0 28px 28px;
+  border-radius: 0 0 14px 14px;
   z-index: 3;
-  box-shadow: 0 6px 24px #0003;
+  box-shadow: 0 3px 12px #0003;
 }
 
 .table-leg {
-  width: 60px;
-  height: 70px;
+  width: 30px;
+  height: 35px;
   background: #7a5c3a;
   position: absolute;
-  bottom: 0; /* ahora sí, pegadas al fondo */
-  border-radius: 16px;
-  border: 7px solid #c9a87a;
+  bottom: 0;
+  border-radius: 8px;
+  border: 3.5px solid #c9a87a;
   z-index: 1;
 }
 .table-leg.left {
-  left: 120px;
+  left: 60px;
 }
 .table-leg.right {
-  right: 120px;
+  right: 60px;
 }
 
 .mesa-obj {
   position: absolute;
   z-index: 10;
-  width: 220px;   /* Cambia este valor para hacerlas más grandes o pequeñas */
-  height: 220px;  /* Cambia este valor también */
+  width: 110px;   /* antes 220px */
+  height: 110px;  /* antes 220px */
   object-fit: contain;
-  filter: drop-shadow(0 4px 12px #0008);
+  filter: drop-shadow(0 2px 6px #0008);
   transition: transform 0.2s;
   pointer-events: auto;
 }
 
 /* Ajusta estos valores para distribuir los objetos como prefieras */
 .obj-correo {
-  top: 100px;      /* Cambia la distancia desde arriba */
-  left: 220px;    /* Cambia la distancia desde la izquierda */
-  transform: rotate(-8deg); /* Cambia el ángulo si quieres */
+  top: 50px;
+  left: 110px;
+  transform: rotate(-8deg);
 }
 .obj-cv {
-  top: 120px;
-  left: 520px;
+  top: 60px;
+  left: 260px;
   transform: rotate(6deg);
 }
 .obj-linkedin {
-  top: 98px;
-  right: 420px;
+  top: 49px;
+  right: 210px;
   transform: rotate(-4deg);
 }
 .obj-telefono {
-  top: 130px;
-  right: 180px;
+  top: 65px;
+  right: 90px;
   transform: rotate(10deg);
 }
 
 .mesa-obj:hover {
   transform: scale(1.13) rotate(-2deg);
-  filter: drop-shadow(0 8px 24px #00ffe7cc);
+  filter: drop-shadow(0 4px 12px #00ffe7cc);
 }
 
 .contact-message {
-  margin: 40px 0 24px 0;
-  padding: 32px 40px;
+  margin: 20px 0 12px 0;
+  padding: 16px 20px;
   background: #fffbe7;
   color: #222;
-  border-radius: 22px;
-  font-size: 1.7rem;
-  box-shadow: 0 4px 32px #00ffe733;
+  border-radius: 11px;
+  font-size: 0.85rem;
+  box-shadow: 0 2px 16px #00ffe733;
   text-align: center;
-  min-width: 380px;
-  max-width: 700px;
+  min-width: 190px;
+  max-width: 350px;
   z-index: 100;
 }
 
 .download-btn {
   display: inline-block;
-  margin-top: 18px;
-  padding: 16px 36px;
-  font-size: 1.3rem;
+  margin-top: 9px;
+  padding: 8px 18px;
+  font-size: 0.65rem;
   font-weight: bold;
   color: #fff;
   background: linear-gradient(90deg, #00ffe7 60%, #00bfae 100%);
   border: none;
-  border-radius: 12px;
+  border-radius: 6px;
   text-decoration: none;
-  box-shadow: 0 2px 12px #00ffe799;
+  box-shadow: 0 1px 6px #00ffe799;
   transition: background 0.2s, transform 0.2s;
   cursor: pointer;
 }
@@ -365,9 +365,9 @@ export default {
 
 .back-arrow {
   position: absolute;
-  top: 24px;
-  left: 32px;
-  font-size: 2.5rem;
+  top: 12px;
+  left: 16px;
+  font-size: 1.25rem;
   color: #00ffe7;
   text-decoration: none;
   z-index: 200;
@@ -376,6 +376,6 @@ export default {
 }
 .back-arrow:hover {
   color: #00bfae;
-  transform: scale(1.15) translateX(-6px);
+  transform: scale(1.15) translateX(-3px);
 }
 </style>

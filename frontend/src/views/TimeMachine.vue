@@ -78,25 +78,25 @@ export default {
 
 .location-title {
   color: #00ffe7;
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  text-shadow: 0 0 8px #00ffe7, 2px 2px 0 #222;
+  font-size: 1.5rem; /* antes 3rem */
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 4px #00ffe7, 1px 1px 0 #222;
 }
 
 .location-desc {
-  font-size: 1.3rem;
-  max-width: 600px;
+  font-size: 0.65rem; /* antes 1.3rem */
+  max-width: 300px;
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .flux-capacitor-container {
   position: absolute;
-  right: 14vw;           /* más cerca del centro */
+  right: 7vw;           /* antes 14vw */
   top: 50%;
   transform: translateY(-50%);
-  width: 520px;          /* antes 420px */
-  height: 660px;         /* antes 540px */
+  width: 260px;         /* antes 520px */
+  height: 330px;        /* antes 660px */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -105,12 +105,12 @@ export default {
 
 .flux-capacitor {
   position: relative;
-  width: 400px;          /* antes 320px */
-  height: 560px;         /* antes 440px */
+  width: 200px;         /* antes 400px */
+  height: 280px;        /* antes 560px */
   background: #222;
-  border: 8px solid #666;
-  border-radius: 56px;
-  box-shadow: 0 0 48px #00ffe7aa, 0 0 0 12px #111 inset;
+  border: 4px solid #666;
+  border-radius: 28px;
+  box-shadow: 0 0 24px #00ffe7aa, 0 0 0 6px #111 inset;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -118,40 +118,40 @@ export default {
 
 .flux-arm {
   position: absolute;
-  width: 28px;
+  width: 14px;          /* antes 28px */
   background: #444;
-  border-radius: 10px;
+  border-radius: 5px;
   left: 50%;
-  top: 160px; /* más abajo para el nuevo tamaño */
+  top: 80px;            /* antes 160px */
   transform-origin: top center;
-  box-shadow: 0 0 24px #00ffe7aa, 0 0 48px #00ffe744;
+  box-shadow: 0 0 12px #00ffe7aa, 0 0 24px #00ffe744;
   animation: flux-glow 2.2s infinite alternate;
 }
 
 .flux-arm.arm1 {
-  height: 400px; /* vertical, más largo */
+  height: 200px;        /* antes 400px */
   transform: translateX(-50%) rotate(0deg);
 }
 .flux-arm.arm2 {
-  height: 220px;
-  transform: translateX(-50%) rotate(120deg); /* diagonal izquierda */
+  height: 110px;        /* antes 220px */
+  transform: translateX(-50%) rotate(120deg);
 }
 .flux-arm.arm3 {
-  height: 220px;
-  transform: translateX(-50%) rotate(240deg); /* diagonal derecha */
+  height: 110px;        /* antes 220px */
+  transform: translateX(-50%) rotate(240deg);
 }
 
 .flux-center {
   position: absolute;
   left: 50%;
-  top: 160px;
-  width: 72px;
-  height: 72px;
+  top: 80px;            /* antes 160px */
+  width: 36px;          /* antes 72px */
+  height: 36px;         /* antes 72px */
   background: #111;
-  border: 8px solid #00ffe7;
+  border: 4px solid #00ffe7;
   border-radius: 50%;
   transform: translate(-50%, -50%);
-  box-shadow: 0 0 24px #00ffe7cc;
+  box-shadow: 0 0 12px #00ffe7cc;
   z-index: 2;
 }
 
@@ -162,11 +162,11 @@ export default {
 
 .dreams-stack {
   position: absolute;
-  left: 14vw;            /* más cerca del centro */
+  left: 7vw;            /* antes 14vw */
   top: 50%;
   transform: translateY(-50%);
-  width: 420px;          /* más grande */
-  height: 340px;
+  width: 210px;         /* antes 420px */
+  height: 170px;        /* antes 340px */
   cursor: pointer;
   z-index: 2;
   display: flex;
@@ -176,21 +176,19 @@ export default {
 }
 
 .dream-sheet {
-  width: 600px;          /* más grande */
-  height: 340px;         /* más grande */
-  font-size: 1.5rem;
-  padding: 2.5em;
+  width: 300px;         /* antes 600px */
+  height: 170px;        /* antes 340px */
+  font-size: 0.75rem;   /* antes 1.5rem */
+  padding: 1.25em;      /* antes 2.5em */
   position: absolute;
   background: #fffbe7;
-  border: 2px solid #e0c97a;
-  border-radius: 18px;
+  border: 1px solid #e0c97a;
+  border-radius: 9px;
   transition: all 0.4s cubic-bezier(.77,0,.18,1);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.25rem;
   color: #222;
-  padding: 2em;
   opacity: 0;
   pointer-events: none;
 }
@@ -208,15 +206,15 @@ export default {
 
 .dream-image {
   width: 100%;
-  height: 140px;
-  margin-bottom: 1em;
+  height: 70px;         /* antes 140px */
+  margin-bottom: 0.5em;
   display: flex;
   align-items: center;
   justify-content: center;
   background: #f5eecb;
-  border-radius: 12px;
+  border-radius: 6px;
   overflow: hidden;
-  border: 1.5px solid #e0c97a;
+  border: 0.75px solid #e0c97a;
 }
 
 .dream-image img {
@@ -228,48 +226,30 @@ export default {
 
 .dreams-tip {
   position: absolute;
-  bottom: -190px;
-  left: 90px;
+  bottom: -95px;        /* antes -190px */
+  left: 45px;           /* antes 90px */
   width: 100%;
   text-align: center;
   color: #00ffe7;
-  font-size: 1.3rem;
+  font-size: 0.65rem;   /* antes 1.3rem */
   opacity: 0.7;
   letter-spacing: 1px;
   z-index: 10;
 }
 
-@keyframes ray-flicker {
-  0% { stroke-dashoffset: 0; opacity: 1; }
-  50% { stroke-dashoffset: 10; opacity: 0.7; }
-  100% { stroke-dashoffset: 20; opacity: 1; }
-}
-
-@keyframes flux-glow {
-  0% {
-    box-shadow: 0 0 16px #00ffe7aa, 0 0 32px #00ffe744;
-  }
-  50% {
-    box-shadow: 0 0 48px #00ffe7ff, 0 0 96px #00ffe799;
-  }
-  100% {
-    box-shadow: 0 0 16px #00ffe7aa, 0 0 32px #00ffe744;
-  }
-}
-
 .back-arrow {
   position: absolute;
-  top: 24px;
-  left: 32px;
-  font-size: 2.5rem;
+  top: 12px;
+  left: 16px;
+  font-size: 1.25rem;
   color: #00ffe7;
   text-decoration: none;
-  z-index: 30;
+  z-index: 200;
   transition: color 0.2s, transform 0.2s;
   user-select: none;
 }
 .back-arrow:hover {
   color: #00bfae;
-  transform: scale(1.15) translateX(-6px);
+  transform: scale(1.15) translateX(-3px);
 }
 </style>
