@@ -53,8 +53,7 @@ export default {
       hovered: null,
       projects: [
         { name: "Página de Taq Balam: Vehículos eficientes", url: "https://taqbalamgt.netlify.app/" },
-        { name: "CSS only: Dibujando Omnom", url: "https://calicheoficial.lat/23003/omnom/" },
-        { name: "JS only: Chat", url: "https://calicheoficial.lat/23003/chat/" }
+        { name: "Repositorio de github", url: "https://github.com/Isabella334" }
       ]
     }
   }
