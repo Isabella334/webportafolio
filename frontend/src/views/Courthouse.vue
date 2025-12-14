@@ -131,14 +131,16 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding-top: 60px;
+  padding: 60px 20px 0;
+  overflow-x: hidden;
 }
 
 .location-title {
   color: #00ffe7;
-  font-size: 1.5rem; /* antes 3rem */
+  font-size: 1.5rem;
   margin-bottom: 0.5rem;
   text-shadow: 0 0 4px #00ffe7, 1px 1px 0 #222;
+  text-align: center;
 }
 
 .location-desc {
@@ -146,6 +148,8 @@ export default {
   max-width: 400px;
   text-align: center;
   margin-bottom: 1rem;
+  padding: 0 10px;
+  line-height: 1.4;
 }
 
 .clock-analog {
@@ -157,8 +161,8 @@ export default {
 
 .clock-face {
   position: relative;
-  width: 110px;   /* antes 220px */
-  height: 110px;  /* antes 220px */
+  width: 110px;
+  height: 110px;
   background: #222;
   border: 4px solid #00ffe7;
   border-radius: 50%;
@@ -239,8 +243,8 @@ export default {
   left: 50%;
   bottom: 0;
   transform: translateX(-50%);
-  width: 700px;      /* antes 1400px */
-  height: 210px;     /* antes 420px */
+  width: 700px;
+  height: 210px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -294,15 +298,15 @@ export default {
 .mesa-obj {
   position: absolute;
   z-index: 10;
-  width: 110px;   /* antes 220px */
-  height: 110px;  /* antes 220px */
+  width: 110px;
+  height: 110px;
   object-fit: contain;
   filter: drop-shadow(0 2px 6px #0008);
   transition: transform 0.2s;
   pointer-events: auto;
+  cursor: pointer;
 }
 
-/* Ajusta estos valores para distribuir los objetos como prefieras */
 .obj-correo {
   top: 50px;
   left: 110px;
@@ -377,5 +381,349 @@ export default {
 .back-arrow:hover {
   color: #00bfae;
   transform: scale(1.15) translateX(-3px);
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .location-title {
+    font-size: 1.3rem;
+  }
+
+  .location-desc {
+    font-size: 0.7rem;
+    max-width: 350px;
+  }
+
+  .clock-face {
+    width: 100px;
+    height: 100px;
+    border-width: 3px;
+  }
+
+  .hand.hour {
+    width: 4px;
+    height: 27px;
+  }
+
+  .hand.minute {
+    width: 2.5px;
+    height: 36px;
+  }
+
+  .hand.second {
+    width: 1.5px;
+    height: 43px;
+  }
+
+  .clock-number {
+    font-size: 0.55rem;
+    transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-37px) rotate(calc(-1 * var(--angle)));
+  }
+
+  .table-container {
+    width: 600px;
+    height: 180px;
+  }
+
+  .table-top {
+    width: 560px;
+    height: 60px;
+    bottom: 51px;
+  }
+
+  .table-edge {
+    width: 560px;
+    height: 20px;
+    bottom: 31px;
+  }
+
+  .table-leg {
+    width: 26px;
+    height: 31px;
+    border-width: 3px;
+  }
+
+  .table-leg.left {
+    left: 50px;
+  }
+  .table-leg.right {
+    right: 50px;
+  }
+
+  .mesa-obj {
+    width: 95px;
+    height: 95px;
+  }
+
+  .obj-correo {
+    top: 43px;
+    left: 95px;
+  }
+  .obj-cv {
+    top: 51px;
+    left: 223px;
+  }
+  .obj-linkedin {
+    top: 42px;
+    right: 180px;
+  }
+  .obj-telefono {
+    top: 56px;
+    right: 77px;
+  }
+
+  .contact-message {
+    font-size: 0.8rem;
+    max-width: 320px;
+    padding: 14px 18px;
+  }
+}
+
+/* Móviles grandes */
+@media (max-width: 640px) {
+  .location-container {
+    padding-top: 50px;
+  }
+
+  .location-title {
+    font-size: 1.2rem;
+  }
+
+  .location-desc {
+    font-size: 0.65rem;
+    max-width: 320px;
+  }
+
+  .table-container {
+    width: 500px;
+    height: 150px;
+  }
+
+  .table-top {
+    width: 470px;
+    height: 50px;
+    bottom: 43px;
+  }
+
+  .table-edge {
+    width: 470px;
+    height: 17px;
+    bottom: 26px;
+    border-radius: 0 0 12px 12px;
+  }
+
+  .table-leg {
+    width: 22px;
+    height: 26px;
+    border-width: 2.5px;
+  }
+
+  .table-leg.left {
+    left: 42px;
+  }
+  .table-leg.right {
+    right: 42px;
+  }
+
+  .mesa-obj {
+    width: 80px;
+    height: 80px;
+  }
+
+  .obj-correo {
+    top: 36px;
+    left: 80px;
+  }
+  .obj-cv {
+    top: 43px;
+    left: 187px;
+  }
+  .obj-linkedin {
+    top: 35px;
+    right: 151px;
+  }
+  .obj-telefono {
+    top: 47px;
+    right: 65px;
+  }
+
+  .contact-message {
+    font-size: 0.75rem;
+    max-width: 290px;
+  }
+}
+
+/* Móviles estándar */
+@media (max-width: 480px) {
+  .location-title {
+    font-size: 1.1rem;
+  }
+
+  .location-desc {
+    font-size: 0.62rem;
+    max-width: 280px;
+  }
+
+  .back-arrow {
+    font-size: 1.1rem;
+    top: 10px;
+    left: 12px;
+  }
+
+  .table-container {
+    width: 400px;
+    height: 120px;
+  }
+
+  .table-top {
+    width: 380px;
+    height: 40px;
+    bottom: 34px;
+  }
+
+  .table-edge {
+    width: 380px;
+    height: 14px;
+    bottom: 20px;
+    border-radius: 0 0 10px 10px;
+  }
+
+  .table-leg {
+    width: 18px;
+    height: 20px;
+    border-width: 2px;
+    border-radius: 6px;
+  }
+
+  .table-leg.left {
+    left: 34px;
+  }
+  .table-leg.right {
+    right: 34px;
+  }
+
+  .mesa-obj {
+    width: 65px;
+    height: 65px;
+  }
+
+  .obj-correo {
+    top: 29px;
+    left: 65px;
+  }
+  .obj-cv {
+    top: 34px;
+    left: 151px;
+  }
+  .obj-linkedin {
+    top: 28px;
+    right: 122px;
+  }
+  .obj-telefono {
+    top: 38px;
+    right: 52px;
+  }
+
+  .mesa-obj:hover {
+    transform: scale(1.1) rotate(-2deg);
+  }
+
+  .contact-message {
+    font-size: 0.72rem;
+    max-width: 260px;
+    padding: 12px 16px;
+  }
+
+  .download-btn {
+    padding: 7px 15px;
+    font-size: 0.6rem;
+  }
+}
+
+/* Móviles pequeños */
+@media (max-width: 360px) {
+  .location-title {
+    font-size: 1rem;
+  }
+
+  .location-desc {
+    font-size: 0.58rem;
+    max-width: 250px;
+  }
+
+  .clock-face {
+    width: 90px;
+    height: 90px;
+  }
+
+  .hand.hour {
+    height: 24px;
+  }
+
+  .hand.minute {
+    height: 32px;
+  }
+
+  .hand.second {
+    height: 38px;
+  }
+
+  .table-container {
+    width: 340px;
+    height: 102px;
+  }
+
+  .table-top {
+    width: 320px;
+    height: 34px;
+    bottom: 29px;
+  }
+
+  .table-edge {
+    width: 320px;
+    height: 12px;
+    bottom: 17px;
+    border-radius: 0 0 8px 8px;
+  }
+
+  .table-leg {
+    width: 16px;
+    height: 17px;
+    border-width: 1.5px;
+  }
+
+  .table-leg.left {
+    left: 28px;
+  }
+  .table-leg.right {
+    right: 28px;
+  }
+
+  .mesa-obj {
+    width: 55px;
+    height: 55px;
+  }
+
+  .obj-correo {
+    top: 25px;
+    left: 55px;
+  }
+  .obj-cv {
+    top: 29px;
+    left: 127px;
+  }
+  .obj-linkedin {
+    top: 24px;
+    right: 103px;
+  }
+  .obj-telefono {
+    top: 32px;
+    right: 44px;
+  }
+
+  .contact-message {
+    font-size: 0.68rem;
+    max-width: 230px;
+  }
 }
 </style>

@@ -12,7 +12,7 @@
         v-for="(img, i) in images"
         :key="i"
         class="map-img-wrapper"
-        :style="img.style"
+        :class="`location-${i}`"
       >
         <img
           :src="img.src"
@@ -44,32 +44,27 @@ export default {
         {
           src: '/CourthouseSquare.png',
           alt: 'Courthouse Square',
-          route: '/courthouse',
-          style: 'top: 30vh; left: 15vw; width: 18vw;'
+          route: '/courthouse'
         },
         {
           src: '/DocBrownHouse.png',
           alt: 'Doc Brown House',
-          route: '/docbrown',
-          style: 'top: 30vh; left: 40vw; width: 18vw;'
+          route: '/docbrown'
         },
         {
           src: '/HillValleyHighSchool.png',
           alt: 'Hill Valley High School',
-          route: '/highschool',
-          style: 'top: 30vh; left: 65vw; width: 18vw;'
+          route: '/highschool'
         },
         {
           src: '/MartyHouse.png',
           alt: 'Marty House',
-          route: '/martyhouse',
-          style: 'top: 60vh; left: 25vw; width: 18vw;'
+          route: '/martyhouse'
         },
         {
           src: '/TimeMachine.png',
           alt: 'Time Machine',
-          route: '/timemachine',
-          style: 'top: 60vh; left: 55vw; width: 18vw;'
+          route: '/timemachine'
         }
       ]
     }
@@ -91,6 +86,7 @@ export default {
   align-items: center;
   padding: 0;
   position: relative;
+  overflow-x: hidden;
 }
 
 .back-arrow {
@@ -124,6 +120,7 @@ export default {
   position: relative;
   animation: neon-flicker 2s linear forwards;
   overflow: hidden;
+  padding: 0 20px;
 }
 
 @keyframes neon-flicker {
@@ -172,30 +169,63 @@ export default {
   color: #fff;
   text-align: center;
   font-size: 1.5rem;
+  padding: 0 20px;
+  margin-bottom: 20px;
 }
 
 .map-images {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none;
+  position: relative;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 40px;
+  min-height: 500px;
 }
 
 .map-img-wrapper {
-  position: absolute;
   display: flex;
   flex-direction: column;
   align-items: center;
-  pointer-events: auto;
+  justify-content: center;
+  position: relative;
+}
+
+/* Posicionamiento específico para desktop */
+.location-0 {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.location-1 {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.location-2 {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.location-3 {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.location-4 {
+  grid-column: 3;
+  grid-row: 2;
 }
 
 .map-img {
   display: block;
+  width: 100%;
+  max-width: 200px;
   height: auto;
   transition: transform 0.2s;
-  max-width: 200px; /* antes 400px */
 }
 
 .map-img:hover {
@@ -207,7 +237,7 @@ export default {
   position: absolute;
   top: 100%;
   left: 50%;
-  transform: translateX(-50%) translateY(20px);
+  transform: translateX(-50%) translateY(8px);
   background: transparent;
   color: #00ffe7;
   padding: 0.7em 2em;
@@ -221,5 +251,154 @@ export default {
   z-index: 10;
   text-shadow: 0 1px 4px #fff, 0 0 2px #00ffe7;
   animation: tooltip-fade 0.2s;
+}
+
+/* Tablets y pantallas medianas */
+@media (max-width: 1024px) {
+  .map-title {
+    font-size: 2.5rem;
+    margin-top: 30px;
+  }
+
+  .map-content {
+    font-size: 1.3rem;
+  }
+
+  .back-arrow {
+    font-size: 2rem;
+    top: 20px;
+    left: 20px;
+  }
+
+  .map-images {
+    gap: 30px;
+    padding: 15px;
+  }
+
+  .map-img {
+    max-width: 160px;
+  }
+}
+
+/* Tablets pequeñas */
+@media (max-width: 768px) {
+  .map-title {
+    font-size: 2rem;
+    margin-top: 20px;
+  }
+
+  .map-content {
+    font-size: 1.1rem;
+  }
+
+  .back-arrow {
+    font-size: 1.8rem;
+    top: 15px;
+    left: 15px;
+  }
+
+  .map-images {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    gap: 25px;
+    padding: 10px;
+  }
+
+  /* Reorganizar en 2 columnas */
+  .location-0 {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .location-1 {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .location-2 {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .location-3 {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .location-4 {
+    grid-column: 1 / 3;
+    grid-row: 3;
+    justify-self: center;
+  }
+
+  .map-img {
+    max-width: 140px;
+  }
+
+  .map-tooltip {
+    font-size: 0.9rem;
+    padding: 0.5em 1.5em;
+    transform: translateX(-50%) translateY(8px);
+  }
+}
+
+/* Móviles */
+@media (max-width: 480px) {
+  .map-title {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    margin-top: 60px;
+  }
+
+  .map-content {
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+  }
+
+  .back-arrow {
+    font-size: 1.5rem;
+    top: 12px;
+    left: 12px;
+  }
+
+  .map-images {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 10px;
+    min-height: auto;
+  }
+
+  .location-0,
+  .location-1,
+  .location-2,
+  .location-3,
+  .location-4 {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .map-img {
+    max-width: 180px;
+  }
+
+  .map-tooltip {
+    font-size: 0.85rem;
+    padding: 0.4em 1em;
+    transform: translateX(-50%) translateY(5px);
+  }
+}
+
+@media (max-width: 360px) {
+  .map-title {
+    font-size: 1.3rem;
+  }
+
+  .map-content {
+    font-size: 0.85rem;
+  }
+
+  .map-img {
+    max-width: 150px;
+  }
 }
 </style>

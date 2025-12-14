@@ -8,32 +8,33 @@
       ¡Estás dentro del DeLorean! 
 El condensador de flujo brilla intensamente. A tu izquierda están las hojas del sueño original del Doc, ¡pero ahora muestran los sueños y metas del futuro de quien creó este portafolio! Haz clic y viaja por sus aspiraciones.
     </p>
-    <!-- Puedes agregar más contenido aquí -->
-    <div class="flux-capacitor-container">
-      <div class="flux-capacitor">
-        <div class="flux-arm arm1"></div>
-        <div class="flux-arm arm2"></div>
-        <div class="flux-arm arm3"></div>
-        <div class="flux-center"></div>
-      </div>
-    </div>
-    <div class="dreams-stack" @click="nextDream">
-      <div
-        v-for="(dream, i) in dreams"
-        :key="i"
-        class="dream-sheet"
-        :class="{ active: i === currentDream }"
-        :style="{ zIndex: dreams.length - i, left: (i - currentDream) * 8 + 'px', top: (i - currentDream) * 8 + 'px' }"
-      >
-        <div class="dream-image">
-          <!-- Cuando tengas la imagen, pon la ruta en dream.img -->
-          <img v-if="dream.img" :src="dream.img" alt="Imagen del sueño" />
+    <div class="content-wrapper">
+      <div class="dreams-stack" @click="nextDream">
+        <div
+          v-for="(dream, i) in dreams"
+          :key="i"
+          class="dream-sheet"
+          :class="{ active: i === currentDream }"
+          :style="{ zIndex: dreams.length - i, left: (i - currentDream) * 8 + 'px', top: (i - currentDream) * 8 + 'px' }"
+        >
+          <div class="dream-image">
+            <img v-if="dream.img" :src="dream.img" alt="Imagen del sueño" />
+          </div>
+          <div class="dream-content">
+            {{ dream.text }}
+          </div>
         </div>
-        <div class="dream-content">
-          {{ dream.text }}
+        <div class="dreams-tip">Haz click para cambiar de hoja</div>
+      </div>
+      
+      <div class="flux-capacitor-container">
+        <div class="flux-capacitor">
+          <div class="flux-arm arm1"></div>
+          <div class="flux-arm arm2"></div>
+          <div class="flux-arm arm3"></div>
+          <div class="flux-center"></div>
         </div>
       </div>
-      <div class="dreams-tip">Haz click para cambiar de hoja</div>
     </div>
   </div>
 </template>
@@ -73,40 +74,55 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding-top: 60px;
+  padding: 60px 20px 40px;
+  overflow-x: hidden;
 }
 
 .location-title {
   color: #00ffe7;
-  font-size: 1.5rem; /* antes 3rem */
+  font-size: 1.5rem;
   margin-bottom: 0.5rem;
   text-shadow: 0 0 4px #00ffe7, 1px 1px 0 #222;
+  text-align: center;
 }
 
 .location-desc {
-  font-size: 0.8rem; /* antes 1.3rem */
-  max-width: 300px;
+  font-size: 0.8rem;
+  max-width: 400px;
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+  line-height: 1.4;
+  padding: 0 10px;
+}
+
+.content-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  min-height: 500px;
+  gap: 100px;
+  margin-top: 20px;
+  padding: 0 40px;
 }
 
 .flux-capacitor-container {
-  position: absolute;
-  right: 7vw;           /* antes 14vw */
-  top: 50%;
-  transform: translateY(-50%);
-  width: 260px;         /* antes 520px */
-  height: 330px;        /* antes 660px */
+  position: relative;
+  width: 260px;
+  height: 330px;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 2;
+  flex-shrink: 0;
 }
 
 .flux-capacitor {
   position: relative;
-  width: 200px;         /* antes 400px */
-  height: 280px;        /* antes 560px */
+  width: 200px;
+  height: 280px;
   background: #222;
   border: 4px solid #666;
   border-radius: 28px;
@@ -118,46 +134,43 @@ export default {
 
 .flux-arm {
   position: absolute;
-  width: 14px;          /* antes 28px */
+  width: 14px;
   background: #444;
   border-radius: 5px;
   left: 50%;
-  top: 80px;            /* antes 160px */
+  top: 80px;
   transform-origin: top center;
   box-shadow: 0 0 12px #00ffe7aa, 0 0 24px #00ffe744;
   animation: flux-glow 2.2s infinite alternate;
 }
 
 .flux-arm.arm1 {
-  height: 200px;        /* antes 400px */
+  height: 200px;
   transform: translateX(-50%) rotate(0deg);
 }
+
 .flux-arm.arm2 {
-  height: 110px;        /* antes 220px */
+  height: 110px;
   transform: translateX(-50%) rotate(120deg);
 }
+
 .flux-arm.arm3 {
-  height: 110px;        /* antes 220px */
+  height: 110px;
   transform: translateX(-50%) rotate(240deg);
 }
 
 .flux-center {
   position: absolute;
   left: 50%;
-  top: 80px;            /* antes 160px */
-  width: 36px;          /* antes 72px */
-  height: 36px;         /* antes 72px */
+  top: 80px;
+  width: 36px;
+  height: 36px;
   background: #111;
   border: 4px solid #00ffe7;
   border-radius: 50%;
   transform: translate(-50%, -50%);
   box-shadow: 0 0 12px #00ffe7cc;
   z-index: 2;
-}
-
-@keyframes flux-zap {
-  0% { transform: scale(1) rotate(0deg);}
-  100% { transform: scale(1.08) rotate(20deg);}
 }
 
 @keyframes flux-glow {
@@ -170,36 +183,35 @@ export default {
 }
 
 .dreams-stack {
-  position: absolute;
-  left: 7vw;            /* antes 14vw */
-  top: 50%;
-  transform: translateY(-50%);
-  width: 210px;         /* antes 420px */
-  height: 170px;        /* antes 340px */
+  position: relative;
+  width: 300px;
+  height: 170px;
   cursor: pointer;
-  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: center;
   user-select: none;
+  flex-shrink: 0;
 }
 
 .dream-sheet {
-  width: 300px;         /* antes 600px */
-  height: 170px;        /* antes 340px */
-  font-size: 0.75rem;   /* antes 1.5rem */
-  padding: 1.25em;      /* antes 2.5em */
+  width: 300px;
+  height: 170px;
+  font-size: 0.75rem;
+  padding: 1.25em;
   position: absolute;
   background: #fffbe7;
   border: 1px solid #e0c97a;
   border-radius: 9px;
   transition: all 0.4s cubic-bezier(.77,0,.18,1);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   color: #222;
   opacity: 0;
   pointer-events: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .dream-sheet.active {
@@ -211,11 +223,12 @@ export default {
 .dream-content {
   text-align: center;
   width: 100%;
+  font-weight: 500;
 }
 
 .dream-image {
   width: 100%;
-  height: 70px;         /* antes 140px */
+  height: 70px;
   margin-bottom: 0.5em;
   display: flex;
   align-items: center;
@@ -235,15 +248,16 @@ export default {
 
 .dreams-tip {
   position: absolute;
-  bottom: -95px;        /* antes -190px */
-  left: 45px;           /* antes 90px */
-  width: 100%;
+  bottom: -70px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120%;
   text-align: center;
   color: #00ffe7;
-  font-size: 0.65rem;   /* antes 1.3rem */
+  font-size: 0.65rem;
   opacity: 0.7;
   letter-spacing: 1px;
-  z-index: 10;
+  white-space: nowrap;
 }
 
 .back-arrow {
@@ -257,8 +271,349 @@ export default {
   transition: color 0.2s, transform 0.2s;
   user-select: none;
 }
+
 .back-arrow:hover {
   color: #00bfae;
   transform: scale(1.15) translateX(-3px);
+}
+
+/* Tablets grandes */
+@media (max-width: 1024px) {
+  .content-wrapper {
+    gap: 70px;
+    padding: 0 30px;
+  }
+
+  .flux-capacitor-container {
+    width: 220px;
+    height: 280px;
+  }
+
+  .flux-capacitor {
+    width: 170px;
+    height: 240px;
+  }
+
+  .flux-arm {
+    width: 12px;
+    top: 68px;
+  }
+
+  .flux-arm.arm1 {
+    height: 170px;
+  }
+
+  .flux-arm.arm2,
+  .flux-arm.arm3 {
+    height: 94px;
+  }
+
+  .flux-center {
+    width: 30px;
+    height: 30px;
+    top: 68px;
+  }
+
+  .dreams-stack {
+    width: 270px;
+    height: 150px;
+  }
+
+  .dream-sheet {
+    width: 270px;
+    height: 150px;
+    font-size: 0.7rem;
+    padding: 1.1em;
+  }
+
+  .dream-image {
+    height: 60px;
+  }
+}
+
+/* Tablets y móviles landscape */
+@media (max-width: 900px) {
+  .content-wrapper {
+    flex-direction: column;
+    gap: 50px;
+    min-height: auto;
+    padding: 0 20px;
+  }
+
+  .dreams-stack {
+    order: 1;
+  }
+
+  .flux-capacitor-container {
+    order: 2;
+  }
+}
+
+/* Móviles grandes */
+@media (max-width: 640px) {
+  .location-container {
+    padding-top: 50px;
+  }
+
+  .location-title {
+    font-size: 1.3rem;
+  }
+
+  .location-desc {
+    font-size: 0.75rem;
+    max-width: 350px;
+    margin-bottom: 1.5rem;
+  }
+
+  .content-wrapper {
+    gap: 40px;
+    padding: 0 15px;
+  }
+
+  .flux-capacitor-container {
+    width: 190px;
+    height: 240px;
+  }
+
+  .flux-capacitor {
+    width: 150px;
+    height: 210px;
+    border-width: 3px;
+  }
+
+  .flux-arm {
+    width: 10px;
+    top: 60px;
+  }
+
+  .flux-arm.arm1 {
+    height: 150px;
+  }
+
+  .flux-arm.arm2,
+  .flux-arm.arm3 {
+    height: 82px;
+  }
+
+  .flux-center {
+    width: 26px;
+    height: 26px;
+    top: 60px;
+    border-width: 3px;
+  }
+
+  .dreams-stack {
+    width: 240px;
+    height: 135px;
+  }
+
+  .dream-sheet {
+    width: 240px;
+    height: 135px;
+    font-size: 0.65rem;
+    padding: 1em;
+  }
+
+  .dream-image {
+    height: 52px;
+    margin-bottom: 0.4em;
+  }
+
+  .dreams-tip {
+    font-size: 0.6rem;
+    bottom: -60px;
+  }
+}
+
+/* Móviles estándar */
+@media (max-width: 480px) {
+  .location-title {
+    font-size: 1.2rem;
+  }
+
+  .location-desc {
+    font-size: 0.7rem;
+    max-width: 300px;
+  }
+
+  .back-arrow {
+    font-size: 1.1rem;
+    top: 10px;
+    left: 12px;
+  }
+
+  .content-wrapper {
+    gap: 35px;
+    padding: 0 10px;
+  }
+
+  .flux-capacitor-container {
+    width: 160px;
+    height: 200px;
+  }
+
+  .flux-capacitor {
+    width: 125px;
+    height: 175px;
+    border-width: 3px;
+    border-radius: 20px;
+  }
+
+  .flux-arm {
+    width: 9px;
+    top: 50px;
+  }
+
+  .flux-arm.arm1 {
+    height: 125px;
+  }
+
+  .flux-arm.arm2,
+  .flux-arm.arm3 {
+    height: 68px;
+  }
+
+  .flux-center {
+    width: 22px;
+    height: 22px;
+    top: 50px;
+  }
+
+  .dreams-stack {
+    width: 210px;
+    height: 120px;
+  }
+
+  .dream-sheet {
+    width: 210px;
+    height: 120px;
+    font-size: 0.6rem;
+    padding: 0.9em;
+    border-radius: 7px;
+  }
+
+  .dream-image {
+    height: 46px;
+  }
+
+  .dreams-tip {
+    font-size: 0.58rem;
+    bottom: -55px;
+  }
+}
+
+/* Móviles pequeños */
+@media (max-width: 360px) {
+  .location-title {
+    font-size: 1.1rem;
+  }
+
+  .location-desc {
+    font-size: 0.65rem;
+    max-width: 270px;
+  }
+
+  .flux-capacitor-container {
+    width: 140px;
+    height: 175px;
+  }
+
+  .flux-capacitor {
+    width: 110px;
+    height: 155px;
+  }
+
+  .flux-arm {
+    width: 8px;
+    top: 44px;
+  }
+
+  .flux-arm.arm1 {
+    height: 110px;
+  }
+
+  .flux-arm.arm2,
+  .flux-arm.arm3 {
+    height: 60px;
+  }
+
+  .flux-center {
+    width: 20px;
+    height: 20px;
+    top: 44px;
+  }
+
+  .dreams-stack {
+    width: 185px;
+    height: 105px;
+  }
+
+  .dream-sheet {
+    width: 185px;
+    height: 105px;
+    font-size: 0.55rem;
+    padding: 0.8em;
+  }
+
+  .dream-image {
+    height: 40px;
+  }
+
+  .dreams-tip {
+    font-size: 0.55rem;
+    bottom: -50px;
+  }
+}
+
+/* Orientación horizontal */
+@media (max-height: 600px) and (orientation: landscape) {
+  .location-container {
+    padding-top: 40px;
+    padding-bottom: 30px;
+  }
+
+  .location-desc {
+    margin-bottom: 1rem;
+  }
+
+  .content-wrapper {
+    flex-direction: row;
+    gap: 40px;
+    min-height: 300px;
+  }
+
+  .dreams-stack {
+    order: 0;
+  }
+
+  .flux-capacitor-container {
+    order: 0;
+    width: 140px;
+    height: 180px;
+  }
+
+  .flux-capacitor {
+    width: 110px;
+    height: 155px;
+  }
+
+  .dreams-stack {
+    width: 200px;
+    height: 115px;
+  }
+
+  .dream-sheet {
+    width: 200px;
+    height: 115px;
+    font-size: 0.6rem;
+  }
+
+  .dream-image {
+    height: 45px;
+  }
+
+  .dreams-tip {
+    bottom: -45px;
+  }
 }
 </style>
